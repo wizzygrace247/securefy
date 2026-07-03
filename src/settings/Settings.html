@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Securefy — Settings</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 32px;
+            width: 420px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #111;
+        }
+
+        p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: monospace;
+            color: #111;
+            background: #fafafa;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #6c63ff;
+            background: #fff;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        #save-btn {
+            background: #6c63ff;
+            color: #fff;
+        }
+
+        #clear-btn {
+            background: #f0f0f0;
+            color: #555;
+        }
+
+        .status {
+            margin-top: 14px;
+            font-size: 13px;
+            text-align: center;
+            min-height: 20px;
+            font-weight: 500;
+        }
+
+        .status.success {
+            color: #16a34a;
+        }
+
+        .status.error {
+            color: #dc2626;
+        }
+
+        .status.info {
+            color: #888;
+        }
+
+        .hint {
+            margin-top: 20px;
+            padding: 12px;
+            background: #f0f0ff;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .hint a {
+            color: #6c63ff;
+            text-decoration: none;
+        }
+
+        .hint a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>🛡️ URL Guardian Settings</h1>
+        <p>Your API key is stored locally on your device and never sent anywhere except the Gemini API.</p>
+
+        <label for="api-key">Gemini API Key</label>
+        <input type="password" id="api-key" placeholder="AIza..." autocomplete="off" spellcheck="false" />
+
+        <div class="row">
+            <button id="save-btn">Save key</button>
+            <button id="clear-btn">Clear key</button>
+        </div>
+
+        <div class="status" id="status"></div>
+
+        <div class="hint">
+            Don't have a key yet? Get one at
+            <a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com</a>
+            → Create API Key.
+        </div>
+    </div>
+
+    <script src="Settings.js" type="module"></script>
+</body>
+
+</html>

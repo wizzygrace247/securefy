@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Securefy",
+  "version": "1.0.0",
+  "description": "AI-powered website risk scanner",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "notifications",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://*.puter.com/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; connect-src https://*.puter.com;"
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/Contents.ts"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "src/settings/settings.html",
+  "action": {
+    "default_popup": "src/popup/index.html"
+  }
+}
