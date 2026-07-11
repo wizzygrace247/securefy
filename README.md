@@ -50,7 +50,7 @@ Features
 
   Download the pre-built extension
 
-1. Download [`url-guardian.zip`](./url-guardian.zip)
+1. Download [`securefy.zip`](./securefy.zip)
 2. Extract the folder
 3. Open `chrome://extensions` (or `edge://extensions`)
 4. Enable Developer Mode (top right toggle)
