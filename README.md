@@ -1,75 +1,79 @@
-# React + TypeScript + Vite
+Securefy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> AI-powered browser extension that scans every website you visit and rates its risk level in real time.
 
-Currently, two official plugins are available:
+[License](https://img.shields.io/badge/license-MIT-blue)
+[Manifest](https://img.shields.io/badge/manifest-v3-green)
+[Built with](https://img.shields.io/badge/built%20with-React%20%2B%20TypeScript-61dafb)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+ Overview
 
-## React Compiler
+Securefy automatically detects when you visit a website, analyzes it using AI, and instantly alerts you if the site shows signs of being dangerous — before you even realize it.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Features
 
-## Expanding the ESLint configuration
+| Category | What it detects |
+|---|---|
+| Phishing | Fake login pages, credential theft attempts |
+| Malware | Sites likely to deliver malicious scripts or downloads |
+| Impersonation | Sites pretending to be a legitimate brand |
+| Fake News | Misinformation and manipulated content |
+| Ponzi / Fraud | Fake investment and crypto schemes |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Real-time scanning on every page visit
+- Instant browser notifications for risky sites
+- Detailed risk report with per-category breakdown
+- Automatic dark/light theme
+- AI powered by Groq (free tier)
+- Rule-based fallback scanning — works even without an API key
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+ Screenshots
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Safe Site | Dangerous Site |
+|---|---|
+| ![safe](./screenshots/safe.png) | ![dangerous](./screenshots/dangerous.png) |
 
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+ Built With
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [React](https://react.dev) + [TypeScript](https://www.typescriptlang.org)
+- [Vite](https://vitejs.dev) + [@crxjs/vite-plugin](https://crxjs.dev)
+- [Groq AI](https://console.groq.com) — free, fast LLM inference
+- Chrome Extension Manifest V3
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+ Installation
+
+  Download the pre-built extension
+
+1. Download [`url-guardian.zip`](./url-guardian.zip)
+2. Extract the folder
+3. Open `chrome://extensions` (or `edge://extensions`)
+4. Enable Developer Mode (top right toggle)
+5. Click **Load unpacked**
+6. Select the extracted folder
+7. Done 
+
+---
+
+##  Roadmap
+
+- [ ] Publish to Chrome Web Store
+- [ ] Add scan history log
+- [ ] Add whitelist/blacklist custom rules
+- [ ] Support Firefox
+
+---
+
+##  License
+
+MIT © [Emmanuel Wisdom Nkwachukwu](https://github.com/wizzygrace247)
+
+
+ Author
+
+Built by [Emmanuel Wisdom Nkwachukwu](https://wizcrypt.netlify.com) — [GitHub](https://github.com/wizzygrace247) ·
